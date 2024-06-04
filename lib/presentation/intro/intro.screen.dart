@@ -41,7 +41,8 @@ class _SplashScreenState extends State<IntroScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(32, 41, 46, 1),
+      // backgroundColor: Color.fromRGBO(32, 41, 46, 1),
+      backgroundColor: Colors.white,
       body: Center(
         child: ScaleTransition(
           scale: _animation,
