@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 
@@ -330,6 +330,140 @@ class SuivieDemande extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}*/
+
+
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('MamAfrica'),
+      ),
+      drawer: CustomDrawer(),
+      body: const Center(
+        child: Text('Contenu principal ici'),
+      ),
+    );
+  }
+}
+
+class CustomDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: Container(
+        color: Colors.blue[800],
+        child: Column(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text(
+                "Nom:",
+                style: TextStyle(color: Colors.blue[800]),
+              ),
+              accountEmail: Text(
+                "Tél:",
+                style: TextStyle(color: Colors.blue[800]),
+              ),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Icon(
+                  Icons.person,
+                  size: 50.0,
+                  color: Colors.blue[800],
+                ),
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+            ),
+            Expanded(
+              child: ListView(
+                children: <Widget>[
+                  DrawerItem(
+                    icon: Icons.request_page,
+                    text: 'Prêt',
+                    onTap: () {},
+                  ),
+                  DrawerItem(
+                    icon: Icons.payments,
+                    text: 'Remboursement',
+                    onTap: () {},
+                  ),
+                  DrawerItem(
+                    icon: Icons.receipt_long,
+                    text: 'Relevé',
+                    onTap: () {},
+                  ),
+                  DrawerItem(
+                    icon: Icons.message,
+                    text: 'Messagerie',
+                    onTap: () {},
+                  ),
+                  DrawerItem(
+                    icon: Icons.help,
+                    text: 'Aide',
+                    onTap: () {},
+                  ),
+                  DrawerItem(
+                    icon: Icons.logout,
+                    text: 'Déconnexion',
+                    onTap: () {},
+                    textColor: Colors.red,
+                    iconColor: Colors.red,
+                  ),
+                ],
+              ),
+            ),
+            /*Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.network(
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Ecobank_logo.svg/1200px-Ecobank_logo.svg.png',
+                height: 50,
+              ),
+            ),*/
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class DrawerItem extends StatelessWidget {
+  final IconData icon;
+  final String text;
+  final Function() onTap;
+  final Color? textColor;
+  final Color? iconColor;
+
+  DrawerItem({
+    required this.icon,
+    required this.text,
+    required this.onTap,
+    this.textColor,
+    this.iconColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(
+        icon,
+        color: iconColor ?? Colors.black,
+      ),
+      title: Text(
+        text,
+        style: TextStyle(
+          color: textColor ?? Colors.black,
+        ),
+      ),
+      onTap: onTap,
     );
   }
 }
