@@ -43,6 +43,6 @@ class LoginController extends GetxController {
   Future<void> login(LoginRequest loginRequest) async {
     isLoading.value = LoadingState.loading;
     isLoading.value = LoadingState.loaded;
-    Get.offAllNamed(Routes.HOME);
+    Get.offAllNamed(Routes.WELCOME);
   }
 }

@@ -9,4 +9,5 @@ class Routes {
   static const INTRO = '/intro';
   static const LOGIN = '/login';
   static const SIGNUP = '/signup';
+  static const WELCOME = '/welcome';
 }

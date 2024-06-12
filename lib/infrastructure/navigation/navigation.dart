@@ -30,5 +30,10 @@ class Nav {
       page: () => IntroScreen(),
       binding: IntroControllerBinding(),
     ),
+    GetPage(
+      name: Routes.WELCOME,
+      page: () => IntroScreen(),
+      binding: IntroControllerBinding(),
+    ),
   ];
 }

@@ -41,7 +41,7 @@ class _SplashScreenState extends State<IntroScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(32, 41, 46, 1),
+      backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       body: Center(
         child: ScaleTransition(
           scale: _animation,
@@ -55,8 +55,9 @@ class _SplashScreenState extends State<IntroScreen>
   }
 
   void _navigateToForm() {
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Get.offAllNamed(Routes.HOME);
+      //Get.offAllNamed(Routes.HOME);
     });
   }
 }
