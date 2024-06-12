@@ -55,7 +55,7 @@ class _SplashScreenState extends State<IntroScreen>
   }
 
   void _navigateToForm() {
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Get.offAllNamed(Routes.HOME);
       //Get.offAllNamed(Routes.HOME);
     });

@@ -57,17 +57,17 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               _buildTextField(
-                icon: FontAwesomeIcons.user,
+                icon: FontAwesomeIcons.solidUser,
                 hintText: 'Code du client',
               ),
               SizedBox(height: 10),
               _buildTextField(
-                icon: FontAwesomeIcons.phone,
+                icon: FontAwesomeIcons.volumeControlPhone,
                 hintText: 'N° de téléphone',
               ),
               SizedBox(height: 10),
               _buildTextField(
-                icon: FontAwesomeIcons.envelope,
+                icon: FontAwesomeIcons.envelopeOpenText,
                 hintText: 'Email',
               ),
               SizedBox(height: 20),
@@ -103,7 +103,7 @@ class LoginScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: TextField(
           decoration: InputDecoration(
-            icon: FaIcon(icon, color: Colors.white),
+            icon: FaIcon(icon, color: Colors.black),
             hintText: hintText,
             hintStyle: TextStyle(color: Colors.white),
             border: InputBorder.none,

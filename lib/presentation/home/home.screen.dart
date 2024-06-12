@@ -356,28 +356,134 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            // Action pour le bouton menu
+          },
+        ),
+        title: Image.asset('assets/ecobank_logo.png', height: 40), // Assurez-vous d'ajouter le logo dans le dossier assets et de l'inclure dans pubspec.yaml
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.notifications),
+            onPressed: () {
+              // Action pour le bouton de notification
+            },
+          ),
+        ],
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Bienvenu,',
+              style: TextStyle(fontSize: 20, color: Colors.teal),
+            ),
+            Text(
+              'Prénoms et Nom',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 20),
+            Card(
+              color: Colors.teal,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Compte de Prêt',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      '26563232',
+                      style: TextStyle(fontSize: 16, color: Colors.white),
+                    ),
+                    SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Action pour le bouton Voir mes Prêts
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.teal, backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                      child: Text('Voir mes Prêts'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_balance),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: '',
+          ),
+        ],
+        selectedItemColor: Colors.teal,
+        unselectedItemColor: Colors.grey,
+      ),
+    );
+  }
+}
+
 class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
+        padding: const EdgeInsets.all(4.0),
         color: Colors.blue[800],
         child: Column(
           children: <Widget>[
             UserAccountsDrawerHeader(
               accountName: Text(
                 "Nom:",
-                style: TextStyle(color: Colors.blue),
+                style: TextStyle(color: Colors.blue[800], fontWeight: FontWeight.bold, fontSize: 25,),
               ),
               accountEmail: Text(
                 "Tél:",
-                style: TextStyle(color: Colors.blue[800]),
+                style: TextStyle(color: Colors.blue[800], fontWeight: FontWeight.bold, fontSize: 16,),
               ),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.white,
                 child: Icon(
                   Icons.person,
-                  size: 50.0,
+                  size: 55.0,
                   color: Colors.blue[800],
 
                 ),
@@ -388,6 +494,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             Expanded(
               child: ListView(
+                padding: const EdgeInsets.all(40.0),
                 children: <Widget>[
                   DrawerItem(
                     icon: Icons.request_page,
@@ -424,13 +531,12 @@ class CustomDrawer extends StatelessWidget {
                 ],
               ),
             ),
-            /*Padding(
+            Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Image.network(
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Ecobank_logo.svg/1200px-Ecobank_logo.svg.png',
-                height: 50,
+              child: Image.asset(
+                'assets/images/ecobank.jpeg', height: 180, width: 199, color: Colors.blue[500],
               ),
-            ),*/
+            ),
           ],
         ),
       ),
@@ -458,13 +564,13 @@ class DrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      padding: const EdgeInsets.symmetric(vertical: 6.0),
       child: GestureDetector(
         onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(25),
           ),
           child: ListTile(
             leading: FaIcon(icon, color: color),

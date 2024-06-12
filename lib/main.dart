@@ -34,7 +34,7 @@ class Main extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             getPages: Nav.routes,
             // Déterminer la route initiale en fonction de l'état de connexion de l'utilisateur
-            initialRoute: Routes.INTRO,
+            initialRoute: Routes.AIDE,
           );
         }
       },

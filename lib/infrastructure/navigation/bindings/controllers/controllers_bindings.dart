@@ -3,3 +3,10 @@ export 'package:mamafrica/infrastructure/navigation/bindings/controllers/home.co
 export 'package:mamafrica/infrastructure/navigation/bindings/controllers/intro.controller.binding.dart';
 export 'package:mamafrica/infrastructure/navigation/bindings/controllers/login.controller.binding.dart';
 export 'package:mamafrica/infrastructure/navigation/bindings/controllers/welcome.controller.binding.dart';
+export 'package:mamafrica/infrastructure/navigation/bindings/controllers/formulaire0.controller.binding.dart';
+export 'package:mamafrica/infrastructure/navigation/bindings/controllers/formulaire.controller.binding.dart';
+export 'package:mamafrica/infrastructure/navigation/bindings/controllers/details_pret.controller.binding.dart';
+export 'package:mamafrica/infrastructure/navigation/bindings/controllers/pret.controller.binding.dart';
+export 'package:mamafrica/infrastructure/navigation/bindings/controllers/aide.controller.binding.dart';
+export 'package:mamafrica/infrastructure/navigation/bindings/controllers/messagerie.controller.binding.dart';
+export 'package:mamafrica/infrastructure/navigation/bindings/controllers/releve.controller.binding.dart';
