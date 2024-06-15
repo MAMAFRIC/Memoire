@@ -13,7 +13,8 @@ class MessagerieScreen extends StatelessWidget {
             // Action pour le bouton retour
           },
         ),
-        title: Text('Messagerie'),
+
+        title: Text('Messagerie', style: TextStyle(color: Colors.blue),),
         actions: [
           IconButton(
             icon: Icon(Icons.notifications, color: Colors.blue[800],),
@@ -38,35 +39,23 @@ class MessagerieScreen extends StatelessWidget {
                   isSentByUser: true,
                 ),
                 buildChatMessage(
-                  message: "Je vous remercie pour votre service.",
+                  message: "J'ai appeller votre service client. Le service client m'a demandé de m'adresser a vous, cher gestionnaire de mon compte. En effet j'ai un projet de construire sur mon terrain a Calavi. Je voulais deplacer mes parents.",
+                  isSentByUser: true,
+                ),
+                buildChatMessage(
+                  message: "Cher client ici tu parles au gestionnaire de compte de Ecobank de l'agence de Fidjrosse. Ta demande sera analysee par la hyerarchie et Ecobank vous reviendras. Merci",
+                  isSentByUser: false,
+                ),
+                buildChatMessage(
+                  message: " J'espere une reponse favorable a ma requette.",
                   isSentByUser: true,
                 ),
                 buildChatMessage(
                   message: "Merci de nous choisir. Nous sommes à votre disposition pour vous aider.",
-                  isSentByUser: false,
-                ),
-                buildChatMessage(
-                  message: "Lorem ipsum",
                   isSentByUser: true,
                 ),
                 buildChatMessage(
-                  message: "Lorem ipsum dolor sit amet cotur.",
-                  isSentByUser: true,
-                ),
-                buildChatMessage(
-                  message: "Lorem ipsum dolor sit amet consectetur. Dictu",
-                  isSentByUser: false,
-                ),
-                buildChatMessage(
-                  message: "Lorem ipsum dolor.",
-                  isSentByUser: false,
-                ),
-                buildChatMessage(
-                  message: "Lorem ipsum",
-                  isSentByUser: true,
-                ),
-                buildChatMessage(
-                  message: "Lorem ipsum dolor sit amet cotur.",
+                  message: "Merci",
                   isSentByUser: true,
                 ),
               ],
@@ -77,7 +66,7 @@ class MessagerieScreen extends StatelessWidget {
             child: Row(
               children: [
                 IconButton(
-                  icon: Icon(Icons.add_circle, color: Colors.teal),
+                  icon: Icon(Icons.add_circle, color: Colors.blue),
                   onPressed: () {
                     // Action pour ajouter un fichier ou autre
                   },
@@ -85,18 +74,19 @@ class MessagerieScreen extends StatelessWidget {
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      hintText: "Taper votre message...",
-                      fillColor: Colors.white,
-                      filled: true,
+                      hintText: ("Taper votre message..." ),
+                      filled: true, // Remplir le TextField
+                      fillColor: Colors.white, // Couleur de fond du TextField
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30.0),
-                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(45.0),
+                        borderSide: BorderSide.none, // Aucun bordure par défaut
                       ),
                     ),
+                    style: TextStyle(color: Colors.blue), // Couleur du texte
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.send, color: Colors.teal),
+                  icon: Icon(Icons.send, color: Colors.blue),
                   onPressed: () {
                     // Action pour envoyer le message
                   },
@@ -109,19 +99,20 @@ class MessagerieScreen extends StatelessWidget {
     );
   }
 
+
   Widget buildChatMessage({required String message, required bool isSentByUser}) {
     return Align(
       alignment: isSentByUser ? Alignment.centerRight : Alignment.centerLeft,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
+        padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
         margin: EdgeInsets.symmetric(vertical: 5.0),
         decoration: BoxDecoration(
-          color: isSentByUser ? Colors.teal : Colors.teal.shade100,
+          color: isSentByUser ? Colors.white : Colors.blue[200],
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: Text(
           message,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
         ),
       ),
     );

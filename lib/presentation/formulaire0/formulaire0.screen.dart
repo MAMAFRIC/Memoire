@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Formulaire0Screen extends StatelessWidget {
@@ -39,7 +38,7 @@ class Formulaire0Screen extends StatelessWidget {
         ],
       ),
         /*backgroundColor: Color.fromRGBO(0, 107, 156, 1),*/ // Utiliser la couleur de votre choix
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(45.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

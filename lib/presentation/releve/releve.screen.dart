@@ -132,7 +132,7 @@ class _ReleveScreenState extends State<ReleveScreen> {
           onChanged: onChanged,
           decoration: InputDecoration(
             filled: true,
-            fillColor: Colors.blue[800],
+            fillColor: Colors.blue,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.0),
             ),

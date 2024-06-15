@@ -18,6 +18,34 @@ class AideScreen extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.notifications, color: Colors.blue[800],),
             onPressed: () {
+              Row(
+                children: [
+                  DropdownButton<String>(
+                    value: 'Français',
+                    dropdownColor: Colors.white,
+                    icon: Icon(
+                      Icons.arrow_drop_down,
+                      color: Colors.white,
+                    ),
+                    onChanged: (String? newValue) {
+                      // Handle change
+                    },
+                    items: <String>['Français', 'Anglais']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    underline: SizedBox(),
+                  ),
+                  SizedBox(width: 8.0),
+                  Icon(
+                    Icons.close,
+                    color: Colors.white,
+                  ),
+                ],
+              );
               // Add notification functionality here
             },
           ),
@@ -30,7 +58,7 @@ class AideScreen extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage('assets/avatar.png'), // Replace with your image asset path
+              backgroundImage: AssetImage('assets/images/mam.jpeg'), // Replace with your image asset path
             ),
             SizedBox(height: 20),
             Text(
@@ -40,15 +68,16 @@ class AideScreen extends StatelessWidget {
             SizedBox(height: 10),
             Text(
               'En quoi pouvons-nous vous aider aujourd\'hui ?',
-              style: TextStyle(fontSize: 16, color: Colors.black54),
+              style: TextStyle(fontSize: 16, color: Colors.black),
             ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Add chat functionality here
               },
-              child: Text('Discutons'),
-            ),
+              child: Text('Discutons',
+                style: TextStyle(color: Colors.black,),)
+              ,),
             SizedBox(height: 40),
             Text(
               'Contactez-nous',
@@ -56,14 +85,14 @@ class AideScreen extends StatelessWidget {
             ),
             SizedBox(height: 10),
             ContactInfo(
-              icon: Icons.email,
+              icon: Icons.alternate_email_outlined,
               label: 'ÉCRIVEZ-NOUS',
-              info: 'mail@domain.com',
+              info: 'mamafrica@ecobank.com',
             ),
             ContactInfo(
               icon: Icons.web,
               label: 'NOTRE SITE INTERNET',
-              info: 'https://www.domain.com',
+              info: 'https://www.ecobank.com',
             ),
           ],
         ),

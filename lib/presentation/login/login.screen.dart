@@ -36,23 +36,23 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('login'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(45.0),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              /*Image.network(
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Ecobank_Logo.png/1200px-Ecobank_Logo.png', // replace with your logo image path
-                height: 100,
-              ),*/
-              SizedBox(height: 20),
+              Image.asset(
+                'assets/images/ecobank.jpeg', // replace with your logo image path
+                height: 200,width: 200,
+              ),
+              SizedBox(height: 80),
               Text(
-                'Connectez vous à votre compte',
+                'Connectez-vous à votre compte',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(0, 106, 148, 1),
+                  color: Color.fromRGBO(21, 101, 192, 1),
                 ),
               ),
               SizedBox(height: 20),
@@ -70,19 +70,33 @@ class LoginScreen extends StatelessWidget {
                 icon: FontAwesomeIcons.envelopeOpenText,
                 hintText: 'Email',
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 80),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildButton(
-                    text: 'Annuler',
-                    color: Colors.red,
-                    onPressed: () {},
+                  Expanded(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red, // background
+                      ),
+                      onPressed: () {
+                        // Action pour le bouton Annuler
+                      },
+                      child: Text('Annuler',
+                        style: TextStyle(color: Colors.white),),
+                    ),
                   ),
-                  _buildButton(
-                    text: 'Valider',
-                    color: Colors.green,
-                    onPressed: () {},
+                  SizedBox(width: 80),
+                  Expanded(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green, // background
+                      ),
+                      onPressed: () {
+                        // Action pour le bouton Suivant
+                      },
+                      child: Text('Valider',
+                        style: TextStyle(color: Colors.white),),
+                    ),
                   ),
                 ],
               ),
@@ -96,7 +110,7 @@ class LoginScreen extends StatelessWidget {
   Widget _buildTextField({required IconData icon, required String hintText}) {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromRGBO(0, 106, 148, 1),
+        color: Color.fromRGBO(21, 101, 192, 1),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Padding(

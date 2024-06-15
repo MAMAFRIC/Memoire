@@ -82,7 +82,7 @@ class Nav {
       binding: ReleveControllerBinding(),
     ),
     GetPage(
-      name: Routes.WELCOME,
+      name: Routes.INTRO,
       page: () => IntroScreen(),
       binding: IntroControllerBinding(),
     ),
