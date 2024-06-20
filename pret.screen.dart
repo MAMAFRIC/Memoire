@@ -8,7 +8,7 @@ class PretScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Prêt'),
+        title: Text('Historique des Prêts'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.blue[800],),
           onPressed: () {
@@ -16,12 +16,12 @@ class PretScreen extends StatelessWidget {
           },
         ),
         actions: [
-          IconButton(
-            icon: Icon(Icons.notifications, color: Colors.blue[800],),
-            onPressed: () {
-              // Add notification functionality here
-            },
-          ),
+          // IconButton(
+          //   icon: Icon(Icons.notifications, color: Colors.blue[800],),
+          //   onPressed: () {
+          //     // Add notification functionality here
+          //   },
+          // ),
         ],
       ),
       body: Padding(
@@ -33,11 +33,11 @@ class PretScreen extends StatelessWidget {
               color: Colors.blue,
               child: ListTile(
                 title: Text(
-                  'Demander un prêt',
+                  'Notre Mission :',
                   style: TextStyle(color: Colors.white),
                 ),
                 subtitle: Text(
-                  'Merci de remplir ce formulaire pour soumettre votre demande de prêt.',
+                  'Fournir à ses clients des services financiers accessibles et fiables. Merci de nous faire confiance.',
                   style: TextStyle(color: Colors.white70),
                 ),
               ),
